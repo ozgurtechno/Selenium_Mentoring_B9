@@ -1,0 +1,10 @@
+Navigate to https://katalon-demo-cura.herokuapp.com/ website
+Click on the Make Appointment button
+Type valid credentials and Click on the Login Button
+Verify that you logged in
+Click on Apply for hospital readmission
+Click on the Medicare button
+Send a valid date
+Leave a short comment
+Click on the Book Appointment button
+Verify that your attempt succeeds

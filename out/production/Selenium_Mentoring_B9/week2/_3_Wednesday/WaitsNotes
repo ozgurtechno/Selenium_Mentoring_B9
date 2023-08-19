@@ -1,0 +1,57 @@
+Selenium - Waits
+
+Sometimes Webpage gets more time than speed of the driver and We get exceptions like Timeout exception, no such element exception, elementnotinteractable exception. These are all called "Syncranization Issues"
+
+What is Syncranization?
+
+Moving, working and operating at the same time. For example in the films sound and action has to match precisely. Driver is so fast but weppage is slow. Webpage is slower than webdriver. This case driver will not be able to find element.  So we should tell driver to wait.
+
+These two should work paralelly in automation:
+
+1) App under test
+2) Test automation tool
+
+And also sometimes;
+
+-code runs faster than browser can handle.
+
+-elements appear in HTML after certain time
+
+-element is in the HTML but appears on the page after certain time.
+
+There are three main sleep in Selenium:
+
+1) Thread.sleep
+
+This adds hardcoded wait to the program.
+It does not depend on any condition
+It will wait for the given time period no matter what
+This is not considered a good practice
+Too much use will make the test long and heavy
+
+
+2) Implicit Wait
+
+Not used for specific condition applies to many lines until that driver is killed or changed.
+Makes driver continiously looking for the webelement for the given duration. (This is called "polling")
+Stops polling as soon as the element is found. and does not wait after from that.
+If element is not found after the given duration it will throw "No Such Element Exception"
+It will apply to every single line where findElemnt() or findElements () is used.
+
+Syntax:
+
+driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+3) Explicit Wait
+Can be used to wait for a certain condition
+Wait until element is visible
+Wait until element is available
+Wait until element is clickable
+Wait until title is.
+
+Syntax:
+WebDriverWait wait = new WebDriverWait (driver, 10);
+wait. until (ExpectedConditions.elementToBeClickable(By.xpath("")));
+
+It will wait 10 seconds if condition does not happen throws TimeOutException
+Here will continue waiting if element is loaded but not clickable.

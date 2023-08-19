@@ -1,0 +1,47 @@
+CSS SELECTOR:
+
+We are not just limited to name, class name, tagname, linktext, partial link text, id
+We are able to create custom locators with CSS Selector and Xpath
+With CSS Selector We can use any attribute inside of the tag
+
+Syntax:
+tagname[attribute='value']
+
+Example:
+<a href="https://www.tesla.com" class="kk99" id="uh7" name="bb95"> TESLA <a/>
+
+a[id='uh7']
+a[name='bb95']
+
+# stands for id attribute
+. stands for class attribute
+
+tagname#idvalue
+tagname.classvalue
+
+a#uh7 -- locates the weblement from idValue
+a.kk99 -- locates the webelement from classValue
+
+or
+
+If you want to be less specific
+#idValue
+.classValue
+
+
+How to move from parent to child (with greater(>) mark)
+
+Syntax:
+tagName[attribute='value'] > childTagName
+
+
+Why do we need to go from parent to child?
+Sometimes the weblement that we want to locate does not have a unique attribute
+
+Example:
+hashcontent>div>h2
+.className>h2
+
+Important:
+We can not go from child to parent using CSS Selector
+

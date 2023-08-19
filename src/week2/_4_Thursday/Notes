@@ -1,0 +1,25 @@
+getWindowHandle/getWindowHandles
+
+- This is an alphanumeric number (is a unique identifier that stores the values of windows opened on a webpage and helps in window handling in Selenium)
+- Return type of getWindowHandle is string
+- Return type of getWindowhandles is set of string
+- The user has to switch from the parent window to the child window to work on them using switchTo( ) method.
+
+String windowHandle = driver.getWindowHandle();
+Set<String> windowHandles = driver.getWindowHandles();
+
+To switch to the tab by using windowhandle;
+
+- driver.switchTo().window("windowhandle");
+
+
+iframe:
+iframe is an HTML inside another HTML
+In order to switch between the iframes in Selenium Java, we can use either of the three different methods mentioned below.
+By id or name.
+By index (index starts from zero)
+By WebElement.
+
+Syntax: (For WebElement)
+ WebElement iframe = Driver.getDriver().findElement(By.id("iframeResult"));
+        Driver.getDriver().switchTo().frame(iframe);

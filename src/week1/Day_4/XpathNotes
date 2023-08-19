@@ -1,0 +1,65 @@
+XPATH:
+
+Xpath allows us to create custom locators in selenium.
+We can also use text of webelement to create xpath locator
+
+There are two types of Xpath:
+
+1) Absolute Xpath
+starts with single slash "/"
+starts looking from the html element and goes 1 by 1 until reaching the desired webelemnt
+ıt is not a reccomended way since with any minimal change in HTML code, this locator will be breaking.
+
+Syntax:
+/html/body/div/div/a
+
+2) Relative Xpath
+Starts with "//" it means you can start anywhere in the HTML page.So relative xpath is very useful
+
+Main syntax:
+//tagName[@attribute='value']
+
+<a href="https://www.tesla.com" id="uh7" name ="bb95"> TESLA </a>
+
+locating with href   //a[@href='https://www.tesla.com']
+locating with id     //a[@id='uh7']
+locating with name   //a[@name='bb95']
+
+
+All xpath locators:
+
+//tagName[@attribute='value']
+We are saying: give me the weblement with the given tagname and attribute value.
+
+//tagname[.='text']
+Searches webelement from text.
+
+//tagname[contains(@attribute, 'value')]
+Looks for the tagname that has matching or containing attribute value.
+
+//*[@attribute='value']
+Use this If you do not want to look for speacial tagname
+
+
+PARENT TO CHİLD:
+We go from parent to child using "/"
+
+FROM CHILD TO PARENT:
+From child to parent "/.."
+
+FOLLOWING-PRECEDING SIBLING:
+
+"/following-sibling::tagname" this goes to the next sibling
+"/preceding-sibling::tagname" this goes to previous sibling
+
+
+Differences between CSS and Xpath:
+
+1) CSS is faster and easier to read and write
+2) CSS can not locate using text of webelements but xpath can:
+ with xpath -->  //tagName[.='text']
+3) indexes can be used wiht xpath but impossible with Css
+ with xpath --> (xpathlocator)[index]
+4) You can not go from child to parent with CSS
+  //button/..   It is possible with xpath with (/..)
+5) xpath can do more than ccss, but it is a little complex
