@@ -56,14 +56,16 @@ public class Actions_Demo extends BaseDriver {
     @Test
     public void keydownandUp(){
 
-        WebElement search = driver.findElement(By.xpath("(//button[@aria-label='Search'])[2]"));
+        WebElement search = driver.findElement(By.xpath("(//button[@aria-label='Search'])[3]"));
         action.click(search).perform();
 
         WebElement input = driver.findElement(By.xpath("(//input[@type='search'])[1]"));
-        action.sendKeys(input, "Merhaba").moveToElement(input)
-                .sendKeys(" Merhaba")
-                .keyDown(input, Keys.getKeyFromUnicode('\uE03D'))
-                .sendKeys("A").perform();
+        action.sendKeys(input, "Hello")
+                .moveToElement(input)
+                .sendKeys(" Hello")
+                .keyDown(input, Keys.getKeyFromUnicode('\uE027'))
+                .sendKeys(" A").perform();
+        Bekle(3);
         action.keyDown(Keys.DELETE).perform();
         Bekle(3);
     }

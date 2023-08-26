@@ -11,34 +11,29 @@ public class SelectExample extends BaseDriver {
     @Test
     public void selectTest() throws InterruptedException {
 
-        driver.get("https://sqengineer.com/practice-sites/basic-web-elements/");
+        driver.get("https://www.selenium.dev/selenium/web/web-form.html");
 
-        Select selectBox = new Select(driver.findElement(By.id("selectBox")));
+        Select selectBox = new Select(driver.findElement(By.name("my-select")));
         selectBox.selectByIndex(0);
-        System.out.println("get first when New York : "+selectBox.getFirstSelectedOption().getText());
         selectBox.getOptions().forEach(opt -> System.out.println(opt.getText()));
 
         System.out.println("-----------------------------------------------------");
         Bekle(3);
 
-        selectBox.selectByValue("Francisco");
-        System.out.println("get first when San francisco : "+selectBox.getFirstSelectedOption().getText());
+        selectBox.selectByValue("2");
+        System.out.println("get first : "+selectBox.getFirstSelectedOption().getText());
 
         System.out.println("-----------------------------------------------------");
         Bekle(3);
 
-        selectBox.selectByVisibleText("Sydney");
-        System.out.println("get first when Sydney : "+selectBox.getFirstSelectedOption().getText());
+        selectBox.selectByVisibleText("Three");
+        System.out.println("get first : "+selectBox.getFirstSelectedOption().getText());
 
         System.out.println("-----------------------------------------------------");
 
         selectBox.getAllSelectedOptions().forEach(opt -> System.out.println(opt.getText()));
 
-        System.out.println("----------------------------------------------------");
-
-        System.out.println("selectBox.getWrappedElement().getText() = " + selectBox.getWrappedElement().getText());
-
-        Assert.assertEquals(selectBox.getFirstSelectedOption().getText(), "Sydney");
+        Assert.assertEquals(selectBox.getFirstSelectedOption().getText(), "Three");
 
         driver.quit();
     }
@@ -54,7 +49,7 @@ public class SelectExample extends BaseDriver {
         multiSelectBox.selectByIndex(2);
 
         multiSelectBox.getAllSelectedOptions().forEach(opt -> System.out.println(opt.getText()));
-
+        driver.quit();
     }
 
 
