@@ -11,7 +11,7 @@ import org.openqa.selenium.remote.service.DriverService;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseTest {
-    public WebDriver driver;
+    public static WebDriver driver;
 
     public WebElement getLocatedElement(WebDriver driver, By by) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
